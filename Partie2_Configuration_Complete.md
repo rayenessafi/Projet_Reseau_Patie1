@@ -187,7 +187,7 @@ interface vlan 30
 #### 3. Configuration des Ports Accès vers Switches Layer 2
 ```bash
 # Port vers SW1
-interface g0/1
+interface e0/1
   description "Port Trunk vers SW1"
   switchport mode trunk
   switchport trunk native vlan 20
@@ -196,7 +196,7 @@ interface g0/1
   exit
 !
 # Port vers SW2
-interface g0/2
+interface e0/2
   description "Port Trunk vers SW2"
   switchport mode trunk
   switchport trunk native vlan 20
@@ -381,14 +381,14 @@ interface vlan 30
   exit
 !
 # Ports Trunk
-interface g0/1
+interface e0/1
   switchport mode trunk
   switchport trunk native vlan 20
   switchport trunk allowed vlan 10,15,20,30
   no shutdown
   exit
 !
-interface g0/2
+interface e0/2
   switchport mode trunk
   switchport trunk native vlan 20
   switchport trunk allowed vlan 10,15,20,30
