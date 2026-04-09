@@ -102,7 +102,7 @@ Ce document décrit la configuration complète d'un réseau MPLS/VPN avec :
 ```bash
 enable
 configure terminal
-hostname Fédérateur1
+hostname Federateur1
 !
 # Configuration des VLANs
 vlan 10
@@ -293,7 +293,7 @@ no logging console
 ```bash
 enable
 configure terminal
-hostname Fédérateur2
+hostname Federateur2
 !
 # Configuration identique à Fédérateur1 SAUF:
 # - Priority HSRP = 100 (non-primaire)
