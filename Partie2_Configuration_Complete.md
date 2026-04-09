@@ -2,11 +2,10 @@
 
 ## Table des Matières
 1. [Analyse de la Topologie](#analyse-de-la-topologie)
-2. [Plan d'Adressage Corrigé](#plan-dadressage-corrigé)
-3. [Configuration du Siège](#configuration-du-siège)
-4. [Configuration des Branches](#configuration-des-branches)
-5. [Configuration du Backbone MPLS](#configuration-du-backbone-mpls)
-6. [Vérification et Tests](#vérification-et-tests)
+2. [Configuration du Siège](#configuration-du-siège)
+3. [Configuration des Branches](#configuration-des-branches)
+4. [Configuration du Backbone MPLS](#configuration-du-backbone-mpls)
+5. [Vérification et Tests](#vérification-et-tests)
 
 ---
 
@@ -72,38 +71,12 @@
 | SW2 | g0/0 | PC1 | e0 | Access |
 | Fédérateur1 | f0/0 | CE11 | f0/0 | WAN |
 | Fédérateur1 | f0/0 | CE21 | f0/0 | WAN |
-| CE11 | g1/0 | - | - | Loopback |
-| CE21 | g1/0 | - | - | Loopback |
-| PE1 | g1/0 | P1 | g2/0 | Backbone |
-| PE1 | g2/0 | P2 | g3/0 | Backbone |
-| PE2 | g1/0 | P1 | g3/0 | Backbone |
-| PE2 | g2/0 | P2 | g2/0 | Backbone |
-| P1 | g1/0 | P2 | g1/0 | Backbone |
-| PE1 | g3/0 | CE11 | f0/0 | Client |
-| PE1 | g4/0 | CE21 | f0/0 | Client |
-| PE2 | g3/0 | CE12 | f0/0 | Client |
-| PE2 | g4/0 | CE22 | f0/0 | Client |
 | CE12 | g1/0 | SW3 | g0/1 | Trunk |
 | SW3 | g0/0 | PC2 | e0 | Access |
 | CE22 | g1/0 | SW4 | g0/1 | Trunk |
 | SW4 | g0/0 | PC3 | e0 | Access |
 
 ---
-
-## Plan d'Adressage Corrigé
-
-### Backbone MPLS (Area 0)
-| Équipement | Interface | Adresse | Masque | Description |
-|-----------|-----------|---------|--------|-------------|
-| PE1 | Loopback 0 | 1.1.1.1 | /32 | Router ID PE1 |
-| PE2 | Loopback 0 | 2.2.2.2 | /32 | Router ID PE2 |
-| P1 | Loopback 0 | 3.3.3.3 | /32 | Router ID P1 |
-| P2 | Loopback 0 | 4.4.4.4 | /32 | Router ID P2 |
-| PE1-P1 | 10.1.1.0 | /30 | - | PE1 g1/0 - P1 g2/0 |
-| PE1-P2 | 10.1.1.4 | /30 | - | PE1 g2/0 - P2 g3/0 |
-| PE2-P1 | 10.1.1.12 | /30 | - | PE2 g3/0 - P1 g3/0 |
-| PE2-P2 | 10.1.1.8 | /30 | - | PE2 g1/0 - P2 g2/0 |
-| P1-P2 | 10.1.1.20 | /30 | - | P1 g1/0 - P2 g1/0 |
 
 ### Siège - Fédérateurs
 | Équipement | Interface | VLAN | Adresse | Masque | Fonction |
