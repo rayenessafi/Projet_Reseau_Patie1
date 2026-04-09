@@ -189,6 +189,7 @@ interface vlan 30
 # Port vers SW1
 interface e0/1
   description "Port Trunk vers SW1"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk native vlan 20
   switchport trunk allowed vlan 10,15,20,30
@@ -198,6 +199,7 @@ interface e0/1
 # Port vers SW2
 interface e0/2
   description "Port Trunk vers SW2"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk native vlan 20
   switchport trunk allowed vlan 10,15,20,30
@@ -207,6 +209,7 @@ interface e0/2
 # EtherChannel vers Fédérateur2
 interface e0/0
   description "EtherChannel vers Fédérateur2 - Lien 1"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk allowed vlan 10,15,20,30
   channel-group 1 mode active
@@ -215,6 +218,7 @@ interface e0/0
 !
 interface e0/1
   description "EtherChannel vers Fédérateur2 - Lien 2"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk allowed vlan 10,15,20,30
   channel-group 1 mode active
@@ -223,6 +227,7 @@ interface e0/1
 !
 interface e0/2
   description "EtherChannel vers Fédérateur2 - Lien 3"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk allowed vlan 10,15,20,30
   channel-group 1 mode active
@@ -231,6 +236,7 @@ interface e0/2
 !
 interface e0/3
   description "EtherChannel vers Fédérateur2 - Lien 4"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk allowed vlan 10,15,20,30
   channel-group 1 mode active
@@ -239,6 +245,7 @@ interface e0/3
 !
 interface e1/0
   description "Backup EtherChannel"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk allowed vlan 10,15,20,30
   channel-group 1 mode active
@@ -248,6 +255,7 @@ interface e1/0
 # Port-Channel EtherChannel
 interface port-channel 1
   description "EtherChannel vers Fédérateur2"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk allowed vlan 10,15,20,30
   no shutdown
@@ -333,7 +341,7 @@ spanning-tree mode rapid
 ```bash
 enable
 configure terminal
-hostname Fédérateur2
+hostname Federateur2
 !
 # VLANs identiques à Fédérateur1
 vlan 10
@@ -382,6 +390,7 @@ interface vlan 30
 !
 # Ports Trunk
 interface e0/1
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk native vlan 20
   switchport trunk allowed vlan 10,15,20,30
@@ -389,6 +398,7 @@ interface e0/1
   exit
 !
 interface e0/2
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk native vlan 20
   switchport trunk allowed vlan 10,15,20,30
@@ -397,6 +407,7 @@ interface e0/2
 !
 # EtherChannel (identique à Fédérateur1)
 interface e0/0
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk allowed vlan 10,15,20,30
   channel-group 1 mode active
@@ -404,6 +415,7 @@ interface e0/0
   exit
 !
 interface e0/1
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk allowed vlan 10,15,20,30
   channel-group 1 mode active
@@ -411,6 +423,7 @@ interface e0/1
   exit
 !
 interface e0/2
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk allowed vlan 10,15,20,30
   channel-group 1 mode active
@@ -418,6 +431,7 @@ interface e0/2
   exit
 !
 interface e0/3
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk allowed vlan 10,15,20,30
   channel-group 1 mode active
@@ -425,6 +439,7 @@ interface e0/3
   exit
 !
 interface e1/0
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk allowed vlan 10,15,20,30
   channel-group 1 mode active
@@ -432,6 +447,7 @@ interface e1/0
   exit
 !
 interface port-channel 1
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk allowed vlan 10,15,20,30
   no shutdown
@@ -494,6 +510,7 @@ interface vlan 20
 # Trunks vers Fédérateurs
 interface g0/1
   description "Trunk vers Fédérateur1"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk native vlan 20
   switchport trunk allowed vlan 10,15,20,30
@@ -502,6 +519,7 @@ interface g0/1
 !
 interface g0/2
   description "Trunk vers Fédérateur2"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk native vlan 20
   switchport trunk allowed vlan 10,15,20,30
@@ -553,6 +571,7 @@ interface vlan 20
 # Trunks vers Fédérateurs
 interface g0/1
   description "Trunk vers Fédérateur2"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk native vlan 20
   switchport trunk allowed vlan 10,15,20,30
@@ -561,6 +580,7 @@ interface g0/1
 !
 interface g0/2
   description "Trunk vers Fédérateur1"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk native vlan 20
   switchport trunk allowed vlan 10,15,20,30
@@ -777,6 +797,7 @@ interface vlan 101
 # Trunk vers CE12
 interface g0/1
   description "Trunk vers CE12"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk native vlan 101
   switchport trunk allowed vlan 101,102,99
@@ -903,6 +924,7 @@ interface vlan 103
 # Trunk vers CE22
 interface g0/1
   description "Trunk vers CE22"
+  switchport trunk encapsulation dot1q
   switchport mode trunk
   switchport trunk native vlan 103
   switchport trunk allowed vlan 103,104,99
